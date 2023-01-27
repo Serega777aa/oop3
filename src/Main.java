@@ -10,6 +10,7 @@ public class Main {
 
         run.setPersona(noDeptPersona);
         run.addPersonaToDepartment(noDeptPersona.get(0), depAcc);
+        run.changeDepartment(noDeptPersona.get(0), depIT, depAcc);
     }
 
     public void setPersona(ArrayList<Persona> noDeptPersona){
@@ -34,8 +35,19 @@ public class Main {
         boolean check = persona.checkAddGroup(group);
         if (check) {
             group.addPeople(persona);
+            showResultAddPersonaToGroup(group);
         } else {
-            System.out.println("Олень отказался!");
+            System.out.println("отказался!");
+        }
+    }
+
+    public void changeDepartment(Persona persona, Group group, Group dep1) {
+        boolean check = persona.checkAddGroup(group);
+        if (check) {
+            group.addPeople(persona);
+            dep1.removePeople(persona);
+        } else {
+            System.out.println("Отказался");
         }
     }
     public void showResultAddPersonaToGroup(Group group){

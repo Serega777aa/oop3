@@ -21,6 +21,7 @@ public class Persona {
         return pAge;
     }
 
+
     public boolean checkAddGroup(Group group){
         System.out.println("Добавить в группу " + group.deptName + "?");
         Scanner in = new Scanner(System.in);
@@ -28,4 +29,5 @@ public class Persona {
         int choice = in.nextInt();
         return choice != 0;
     }
+
 }
